@@ -26,10 +26,7 @@ public class UserController {
         this.userService = userService;
     }
 
-//    @GetMapping("/findByEmail")
-//    public DataResult<List<User>> findByEmail(@RequestParam String email){
-//        return this.userService.findByEmail(email);
-//    }
+
 
 
     @PostMapping("/add")   ///burada body olarak alacağı için komple nesenin kendisini parametre olarak verdik
@@ -44,7 +41,7 @@ public class UserController {
 
 
 
-    //burasının içi Spring validation paketinden gelir
+    //burasının içi Spring validation paketinden gelir//pom.xml de tanımlandı
     @ExceptionHandler(MethodArgumentNotValidException.class)    //burası tipi vermek için!!
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public ErrorDataResult<Object> handleValidationException(MethodArgumentNotValidException exceptions){

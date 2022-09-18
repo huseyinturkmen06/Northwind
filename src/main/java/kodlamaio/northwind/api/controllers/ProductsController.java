@@ -28,7 +28,7 @@ public class ProductsController {
 
     //BURAYA DİKKAT!!!!!
     //ProductService interface inden oluşan referans, @Autowired anotasyonu ile otoamtikten ProductManager nesnesine eşitlenir
-    //ve sonra ProductService refaransı ile eriştiğimiz tüm metodlar zaten ProductManager içinde yazan metodlar oluyo
+    //ve sonra ProductService refaransı ile eriştiğimiz tüm metodlar zaten ProductManager içinde yazan metodlar olur
     private ProductService productService;
 
     @Autowired
@@ -38,7 +38,7 @@ public class ProductsController {
 
     //!!!!!! Autowired: projetyi tarıyor, bakıyor kim ProductService'i imlemente etmiş bakıyor
     //ProductManager etmiş
-    //ProductManager p = new ProductManager(); yapıyo
+    //ProductManager p = new ProductManager(); yapıyor
     //sonra p yi gelip bu üstteki constructor içerisine veriyor
     //özetle new yapmayı durdurmuş oluyoruz
     //birden fazla somut sınıf varsa (ProductManager  gibi ) Autowired patlar
@@ -54,15 +54,6 @@ public class ProductsController {
     }
 
 
-    //this burada JPA ile gelen Product nesnesi mi oluyor??
-
-
-    //DataResult<List<Product>>      bu yapının tamamı sadece tip, getAll ise fonksiyon adı
-
-
-
-    //+++++++++++++++++++++++++++++++++++++++++++++++++
-    // ++++++++++++++++++++++++++++++++++++++++
 
     //*******************************************************  DTO dan gelen join tablosunun kolunları
     @GetMapping("/getProductWithCategoryDetails")
@@ -92,7 +83,7 @@ public class ProductsController {
 
     @PostMapping("/add")
     public Result add(@RequestBody Product product){//burda kullanılan anotasyon ile bilgiler json objesine çevrilir
-        //instagramda vs de böyle, tüm bilgiler bir araya konur ve gönderilir
+        //örneğin instagramda vs de böyle, tüm bilgiler bir araya konur ve gönderilir
         //RequestBody ile gönderilen bu bilgiler aslında bir producttır.
         //Porduct sınıfının tüm özelliklerini alıp bizim için bir product oluşturuyor ve
         //bu product aşağıda kullanıyotuz
@@ -105,7 +96,7 @@ public class ProductsController {
     @GetMapping("/getByProductName")
     public DataResult<Product> getByProductName(@RequestParam String productName){
         //RequestParam: yapılan isteğin parametrelerini oku v o parametrelere göre gerekli parametreyi getir
-        return this.productService.getByProductName(productName);   //buradaki product name'i fonksiyona biz veriyoruz
+        return this.productService.getByProductName(productName);
 
     }
     //parametre ister

@@ -21,8 +21,7 @@ public class Product {
 
 
 
-    //buradaki isimler veri tabanlarındaki isimler ile aynı olmak zorunda  [(name=" ") olan kısımlar yani ]
-    //bu yüzden farklı db ler ile çalışırken hepsinde aynı isimleri kullan
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)   //oracle için sequence
@@ -45,10 +44,9 @@ public class Product {
 
     //$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
     @ManyToOne()       //birden fazla product aynı kategoriye ait olabilir
-    @JoinColumn(name = "category_id")    //bşrleştirği diğer class (tablo daki category_id attrube ünü verdik, ordan gelir  )
-    private Category category;   //kiminle bağlantı kuracaksan ondan nesne olşutr, burası doğru
-                                 //kategori içindeki category_id ile mi birleşti????*
-    //buradaki category öteki class dan türemeleri ve burada foreign key olmalı
+    @JoinColumn(name = "category_id")    //birleştiği diğer class (tablo daki category_id attrube ünü verdik, ordan gelir  )
+    private Category category;   //kiminle bağlantı kuracaksan ondan nesne oluştur, burası doğru
+
 
     //Category de product ile ilgili bir bilgi yok ama product içinde kategory den olan bir bilgi var (category_id)
     //bu yüzden Product ı category_id kolonuna göre categoty ye join yapıyoruz

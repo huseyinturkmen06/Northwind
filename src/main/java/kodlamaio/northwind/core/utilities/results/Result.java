@@ -18,9 +18,9 @@ public class Result {
     }
 
 
-    public boolean isSuccess() {     //neden get değil de is ???
+    public boolean isSuccess() {
 
-                                //sanırım bool türünden değerlerin getter metodu is diye yazılıyor
+
         return this.success;
     }
 

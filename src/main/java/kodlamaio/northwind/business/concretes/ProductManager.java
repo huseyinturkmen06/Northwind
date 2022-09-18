@@ -31,13 +31,13 @@ public class ProductManager implements ProductService {
     //product dao injection u yapıldı
     //product dao da(interface) jparepository(interface) ye gidiyor
     //burda bir class yok
-    //sring arka planda spring bir repository class ı oluşturuyor
+    //spring arka planda spring bir repository class ı oluşturuyor
     //bi tane instance oluşturuyor ve o instance yi buraya verecek
     //Spring arka planda Product dao nun instance si olabilecek bir class üretiyor ve onu veriyor
     // @Autowired   sayesinde
 
     @Autowired   //constructor injection  (direkt attribute den önce yazarsan --- field injection)
-    //bu anatosyon direk olarak ProdutDao nunbaşına da yazılablirdi ama ondan başkası da gelebilir diye
+    //bu anatosyon direk olarak ProdutDao'nunbaşına da yazılablirdi ama ondan başkası da gelebilir diye
     //constractor un başına yazıldı
     //böylece hepsini kapsamış oldu
     //javada bu anotasyon olmazsa olmaz!!!!!!!!!!!!!!!!!!
@@ -46,11 +46,10 @@ public class ProductManager implements ProductService {
     //CONSTRUCTOR INJECTION
     //BİR BAĞIMLILIĞI CONSTRUCTOR ÜZERİNDEN ENJEKTE ETMEK
     public ProductManager(ProductDao productDao) {
-       // super();                                 /// neden super yazıyoruz????
-        this.productDao = productDao; ///********************************CONSTRUCTOR INJECTION için Repository sınıfını private olrak tanımla
+        this.productDao = productDao;
 
     }
-    //autowirred sayesinde product dao otomatik olarak new leniyor ve buradaki constructora veriliyor
+    //autowirred sayesinde product dao otomatik olarak new'leniyor ve buradaki constructora veriliyor
 
     @Override
     public DataResult<List<Product>> getAll() {
@@ -65,10 +64,10 @@ public class ProductManager implements ProductService {
         //her türlü veri tabanı işlemi hazır fonksiyonları içinde bulunur
 
 
-        //sanrım this burada productları işaret ediyor
+
 
         //success verisi zaten SuccessDataResult da defeult olduğu için onu yazmaya gerek yok
-        //constructor içine sırayla data ve Strin message  yolladık
+        //constructor içine sırayla data ve String message  yolladık
                  //tümd dataları getirir//parametre vermezsek
     }
 

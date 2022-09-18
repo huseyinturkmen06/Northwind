@@ -12,7 +12,7 @@ import java.util.List;
 @Entity   //veri tabanı nesnesi olmayı anlatır
 @Data
 @AllArgsConstructor
-@NoArgsConstructor   // ben ekeldim
+@NoArgsConstructor
 @Table(name="categories")    //veri tabanı tablosu olmayı anlatır
 @JsonIgnoreProperties({"hibernateLazyInitializer","handler","products"})
 //kategoriler içinde productlar, productlar  içinde de kategoriler olduğu için
@@ -23,7 +23,7 @@ import java.util.List;
 public class Category {
 
     @Id
-    @Column(name="category_id")    //database deki isimler ile aynı olmasına dikkat et
+    @Column(name="category_id")
     //generated value olmadı çünkü category ler otomatik artmaz
 
     private int categoryId;
@@ -42,8 +42,6 @@ public class Category {
     private List<Product> products;  //kategori birden fazla product alacağı için liste olarak alır
 
 //    //öteki tarafta bu class dan türettiğimiz category nesnesini buraya bağlamışş oluyoruz
-//
-//    //hoca kategories yazdı ama???
 
 
     //$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
@@ -51,7 +49,7 @@ public class Category {
 
 
 
-    //burası çalışmadı (üst taraf) ???????????????*!!!!!!!!!!!
+    //an error!
 
 
 
